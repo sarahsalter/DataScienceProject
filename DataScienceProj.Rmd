@@ -13,8 +13,10 @@ output: html_document
   - 1 
 + Started Creating Codebook 
   - 1 
-+ D
-  - 1 
++ Determing Additional Variables to Create in Dataset
+  - Was there increased driving in particular town/city, county, state, region?
+    - If so why?
+    - 
 
 
 ## Next Steps 
