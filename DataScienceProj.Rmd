@@ -10,11 +10,11 @@ output: html_document
 + Downloaded all 26 Datasets 
   - Ex: Accident, Distract, Paperwork, Person, Vehicle, etc.   
 + Narrowed down Research Questions of Interest 
-  - 1 
+  - 1.  
 + Started Creating Codebook 
-  - 1 
 + Determing Additional Variables to Create in Dataset
   - Was there increased driving in particular town/city, county, state, region? If so, why? How to code this?
+  - Was there an increased amount of provisional licesnses issued in an given area?
   
 
 ## Next Steps 
