@@ -10,7 +10,7 @@ output: html_document
 + Downloaded all 26 Datasets 
   - Ex: Accident, Distract, Paperwork, Person, Vehicle, etc.   
 + Narrowed down Research Questions of Interest 
-  - 1. What model could be developed to identify communities that might be at risk fo fatal crashes?
+  - 1. What model could be developed to identify 'communities' that might be at risk fo fatal crashes?
   - 2. What are the characteristics of communities that in recent years have had the least risk?
   - 2. How does risk based on accident type differ geographically?  Is this risk consistent with previous years? 
 + Started Creating Codebook 
@@ -20,6 +20,7 @@ output: html_document
   - Did the amount of traffic fatalities that have occured in the previous year surpass a certain amount?  
 
 ## Next Steps 
++ Need to more explicitly identify the 'community' I want to analyze
 + Find/scrape other datasets that could be useful
   - 1. Street Light Data, etc.
 + Merge All Datasets to Create a Final Dataset
