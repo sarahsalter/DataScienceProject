@@ -8,6 +8,7 @@ output: html_document
 ## Traffic Fatalities Analysis Progress
 
 + Downloaded all 26 Datasets 
+  - Ex: Accident, Distract, Paperwork, Person, Vehicle, etc.   
 + Narrowed down Research Questions of Interest 
   - 1 
 + C
