@@ -5,13 +5,15 @@ date: "September 11, 2016"
 output: html_document
 ---
 
-## Overview of 2015 Traffic Fatalities
+## Traffic Fatalities Analysis Progress
 
-+ A
-  - 1   
-+ B
++ Downloaded all 26 Datasets 
++ Narrowed down Research Questions of Interest 
   - 1 
 + C
   - 1 
 + D
   - 1 
+
+
+## Next Steps 
