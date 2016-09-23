@@ -10,7 +10,9 @@ output: html_document
 + Downloaded all 26 Datasets 
   - Ex: Accident, Distract, Paperwork, Person, Vehicle, etc.   
 + Narrowed down Research Questions of Interest 
-  - 1.  
+  - 1. What model could be developed to identify communities that might be at risk fo fatal crashes?
+  - 2. What are the characteristics of communities that in recent years have had the least risk?
+  - 2. How does risk based on accident type differ geographically?  Is this risk consistent with previous years? 
 + Started Creating Codebook 
 + Determing Additional Variables to Create in Dataset
   - Was there increased driving in particular town/city, county, state, region? If so, why? How to code this?
