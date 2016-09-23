@@ -14,9 +14,7 @@ output: html_document
 + Started Creating Codebook 
   - 1 
 + Determing Additional Variables to Create in Dataset
-  - Was there increased driving in particular town/city, county, state, region?
-    - If so why?
-    - 
-
+  - Was there increased driving in particular town/city, county, state, region? If so, why? How to code this?
+  
 
 ## Next Steps 
