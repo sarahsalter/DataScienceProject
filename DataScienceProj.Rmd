@@ -17,6 +17,7 @@ output: html_document
 + Determining Additional Variables to Create in Dataset
   - Was there increased driving in particular town/city, county, state, region? If so, why? How to code this?
   - Was there an increased amount of provisional licesnses issued in an given area?
+  - Did the amount of traffic fatalities that have occured in the previous year surpass a certain amount?  
   
 
 ## Next Steps 
