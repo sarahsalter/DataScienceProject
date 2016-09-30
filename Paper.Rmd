@@ -12,7 +12,7 @@ output: html_document
 
 ##A.  Data
 ```
-The data used in this analysis was collected  from the United States Transportation Bureau
+The large majority of the data used in this analysis was collected from the United States Transportation Bureau in a  FARS 
 ```
 
 ##B.  Definitions
