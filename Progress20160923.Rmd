@@ -5,7 +5,26 @@ date: "September 11, 2016"
 output: html_document
 ---
 
-## Traffic Fatalities Analysis Progress
+
+## Traffic Fatalities Analysis Progress  (Date:9/30/16)
++ Identifying important variables for controling and identifying risk
++ Merging important variables within the 26 Datasets
++ Exploring Other Datasets that might be useful 
+  -  1.  Police Databases for identifying all 'motor vehicles accidents' not just ones resulting in a fatality
+  -  2.  Ad Campaigns Data
+  -  3.  State Laws Data--  for traffic accident prevention (i.e- reprecussions for DUIs, violating provisional licenses
+  -  4.  Street Light Data
+   
++
++
++
++
+
+
+
+
+
+## Traffic Fatalities Analysis Progress  (Date:9/23/16)
 
 + Downloaded all 26 Datasets 
   - Ex: Accident, Distract, Paperwork, Person, Vehicle, etc.   
@@ -19,7 +38,7 @@ output: html_document
   - Was there an increased amount of provisional licesnses issued in an given area?
   - Did the amount of traffic fatalities that have occured in the previous year surpass a certain amount?  
 
-## Next Steps 
+## Next Steps  (Date:9/23/16)
 + Need to more explicitly identify the 'community' I want to analyze
 + Find/scrape other datasets that could be useful
   - 1. Street Light Data, etc.
