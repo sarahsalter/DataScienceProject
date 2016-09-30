@@ -7,7 +7,14 @@ output: html_document
 
 #I.  Introduction
 ```
-Yearly traffic related accidents currently contribute to the 4th leading cause of death in the United States, and the leading cause of death for those between the ages 1 to 44. The National Highway Traffic Safety Administration say that highway crashes alone have an annual price tag of around $871 billion in economic loss and social harm, with speeding accounting for $210 billion of that figure.  Due to the fact that a majority of theses deaths are considered 'preventable', it is a dire public health concern that various strateiges at the individual level, as well as at the political level, be executed to reduce the amount of the yearly fatalities caused by these types of accidents.  
+Yearly traffic related accidents currently contribute to the 4th leading cause of death in 
+the United States, and the leading cause of death for those between the ages 1 to 44. The 
+National Highway Traffic Safety Administration say that highway crashes alone have an annual 
+price tag of around $871 billion in economic loss and social harm, with speeding accounting 
+for $210 billion of that figure.  Due to the fact that a majority of theses deaths are 
+considered 'preventable', it is a dire public health concern that various strateiges at the 
+individual level, as well as at the community, state, and federal level, be executed to reduce the amount of the 
+yearly fatalities caused by these types of accidents.  
 
 The purpose of this analysis is to conduct inference 
 ```
@@ -37,7 +44,8 @@ Advertising Educational Foundation Data
 ```
 
 ##B.  Definitions
-+  Motor Vehicles Fatality
++  Motor Vehicles Fatality: This is defined  as  an accident that involves at least 1  '
+motor-vehicle', which causes a death instataneously or up to 30 days after the crash. 
 
 ##C.  Statistical Methods 
 
@@ -46,19 +54,20 @@ Advertising Educational Foundation Data
 
 
 #IV.  Discussion 
-
-FARS is vital to the mission of NHTSA to reduce the number of motor vehicle crashes and deaths on our 
-nation's highways, and subsequently, reduce the associated economic loss to society resulting from 
-those motor vehicle crashes and fatalities. FARS data is critical to understanding the characteristics
-of the environment, trafficway, vehicles, and persons involved in the crash.
-
+```
+FARS is vital to the mission of NHTSA to reduce the number of motor vehicle crashes 
+and deaths on our nation's highways, and subsequently, reduce the associated economic 
+loss to society resulting from those motor vehicle crashes and fatalities. FARS data is 
+critical to understanding the characteristics of the environment, trafficway, vehicles, 
+and persons involved in the crash.
+```
 
 
 
 #V.  Limitations
 ```
-For privacy reasons, there is very limited information in any of these datasets that could potentially
-tie back to the 
+For privacy reasons, there is very limited information in any of these datasets that could 
+potentially tie back to the 
 ```
 
 
