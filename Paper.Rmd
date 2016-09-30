@@ -30,16 +30,13 @@ nation's highways, and subsequently, reduce the associated economic loss to soci
 those motor vehicle crashes and fatalities. FARS data is critical to understanding the characteristics
 of the environment, trafficway, vehicles, and persons involved in the crash.
 
-Fatality Analysis Reporting System (FARS)
-
-The large majority of the data used in this analysis was collected from the United States Transportation
-Bureau in a  FARS 
-
 
 Street Light Data 
+
 ```
 
 ##B.  Definitions
++  Motor Vehicles Fatality
 
 ##C.  Statistical Methods 
 
