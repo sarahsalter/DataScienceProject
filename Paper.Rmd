@@ -6,7 +6,11 @@ output: html_document
 ---
 
 #I.  Introduction
+```
+Yearly traffic related accidents currently contribute to the 4th leading cause of death in the United States, and the leading cause of death for those between the ages 1 to 44. The National Highway Traffic Safety Administration say that highway crashes alone have an annual price tag of around $871 billion in economic loss and social harm, with speeding accounting for $210 billion of that figure.  Due to the fact that a majority of theses deaths are considered 'preventable', it is a dire public health concern that various strateiges at the individual level, as well as at the political level, be executed to reduce the amount of the yearly fatalities caused by these types of accidents.  
 
+The purpose of this analysis is to conduct inference 
+```
 
 #II.  Methods
 
