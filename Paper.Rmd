@@ -12,10 +12,11 @@ output: html_document
 
 ##A.  Data
 ```
-Fatality Analysis Reporting System (FARS) was created in the United States by the National Highway
-Traffic Safety Administration (NHTSA) to provide an overall measure of highway safety, to help suggest 
-solutions, and to help provide an objective basis to evaluate the effectiveness of motor vehicle safety
-standards and highway safety programs.
+The majority of the data used in this analysis was obtained from the Fatality Analysis Reporting 
+System (FARS), created by the National Highway Traffic Safety Administration (NHTSA). The purpose 
+of FARS was to provide an overall measure of highway safety, to help suggest solutions, and to help 
+provide an objective basis to evaluate the effectiveness of motor vehicle safety standards and 
+highway safety programs.
 
 FARS contains data on a census of fatal traffic crashes within the 50 States, the District of Columbia,
 and Puerto Rico. To be included in FARS, a crash must involve a motor vehicle traveling on a trafficway 
