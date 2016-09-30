@@ -13,10 +13,13 @@ National Highway Traffic Safety Administration say that highway crashes alone ha
 price tag of around $871 billion in economic loss and social harm, with speeding accounting 
 for $210 billion of that figure.  Due to the fact that a majority of theses deaths are 
 considered 'preventable', it is a dire public health concern that various strateiges at the 
-individual level, as well as at the community, state, and federal level, be executed to reduce the amount of the 
-yearly fatalities caused by these types of accidents.  
+individual level, as well as at the community, state, and federal level, be executed to 
+reduce the amount of the yearly fatalities caused by these types of accidents.  
 
-The purpose of this analysis is to conduct inference 
+The purpose of this analysis is to conduct inference in order to identify the main risk
+factors based on fatalities in general, as well as  based on one's mode of transporation.
+In addition, this analysis will look into the trends across the past 10 years in  order
+to bring attention to the change in risk, across time and region.  
 ```
 
 #II.  Methods
