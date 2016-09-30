@@ -1,0 +1,823 @@
+#**************************************************************************************************************************************************
+#************************************************************   DATA SCIENCE PROJECT   ************************************************************
+#**************************************************************************************************************************************************
+# DATE CREATED: 9/28/2016
+# PURPOSE: To load in all the main 2010 - 2015 'FARS' datasets from US Department of Transportation
+
+
+
+
+#**************************************************************************************************************************************************
+#******************************************************
+# LOADING 2010 FARS DATA 
+#******************************************************
+#(1): Accident Data-- crash characteristics (1 record per crash)
+accident_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/accident.sas7bdat")
+summary(accident_data2010)
+View(accident_data2010)
+
+#(2): Cevent Data-- chronological sequence of events (1 record per event)
+cevent_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/cevent.sas7bdat")
+summary(cevent_data2010)
+View(cevent_data2010)
+
+#(3): Damage Data-- vehicles damages (1 record per damaged area)
+#damage_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/damage.sas7bdat")
+#summary(damage_data2010)
+#View(damage_data2010)
+
+#(4): Distract Data-- driver distractions (1 record for each distraction; at least 1 per 'in-transit' motor vehicle (IT-MV))
+distract_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/distract.sas7bdat")
+summary(distract_data2010)
+View(distract_data2010)
+
+#(5): Drimpair Data-- physical impairments of driver of MV (1 record per impairment; at least 1 for each driver IT-MV)
+drimpair_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/drimpair.sas7bdat")
+summary(drimpair_data2010)
+View(drimpair_data2010)
+
+#(6): Factor Data-- vehicle circumstances that may have contributed to the accident (at least 1 record per IT-MV; sep record for each factor)
+factor_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/factor.sas7bdat")
+summary(factor_data2010)
+View(factor_data2010)
+
+#(7): Maneuver Data-- actions taken by the driver to avoid something or someone in the road (at least 1 record per IT-MV; sep record for each maneuver)
+maneuver_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/maneuver.sas7bdat")
+summary(maneuver_data2010)
+View(maneuver_data2010)
+
+#(8): Nmcrash Data-- improper actions of people NOT occupants of the MV (1 record per action; at least 1 per person not occupant of MV)
+nmcrash_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/nmcrash.sas7bdat")
+summary(nmcrash_data2010)
+View(nmcrash_data2010)
+
+#(9): NmImpair Data-- physical impairments of people NOT occupants of the MV (1 record per impairment; at least 1 per person not occupant of MV)
+nmimpair_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/nmimpair.sas7bdat")
+summary(nmimpair_data2010)
+View(nmimpair_data2010)
+
+#(10): NmPrior Data-- actions of people that are not occupants (1 record per action; at least 1 record per person not occupant of MV)
+nmprior_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/nmprior.sas7bdat")
+summary(nmprior_data2010)
+View(nmprior_data2010)
+
+#(11): Parkwork Data-- information about parked and working vehicles (1 record per vechile)
+parkwork_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/parkwork.sas7bdat")
+summary(parkwork_data2010)
+View(parkwork_data2010)
+
+#(12): PBType Data-- information about crashes between MV & pedestrians (1 record for each ped, bicyclist, etc.)
+#pbtype_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/pbtype.sas7bdat")
+#summary(pbtype_data2010)
+#View(pbtype_data2010)
+
+#(13): Person Data-- describes characteristics/facts/outcomes all persons involved in the crash (including motorist & non-motorists)
+person_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/person.sas7bdat")
+summary(person_data2010)
+View(person_data2010)
+
+#(14): SafetyEq Data-- information about safety equipment used by people who are not occupants of MV (1 record per equipment item)
+safetyeq_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/afetyeq.sas7bdat")
+summary(safetyeq_data2010)
+View(safetyeq_data2010)
+
+#(15): Vehicle Data-- information describing IT-MV & drivers of IT-MV
+vehicle_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/vehicle.sas7bdat")
+summary(vehicle_data2010)
+View(vehicle_data2010)
+
+#(16): VEvent Data-- contains the sequence of events for each in- transport motor vehicle involved in the crash. (same elements as cevent_data2015)
+vevent_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/vevent.sas7bdat")
+summary(vevent_data2010)
+View(vevent_data2010)
+
+#(17): VINDecode Data-- contains vehicle descriptors for all vehicles, based on vehicle's VIN (decoded using VINtelligence program)
+#vindecode_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/vindecode.sas7bdat")
+#summary(vindecode_data2010)
+#View(vindecode_data2010)
+
+#(18): Violatin Data-- contains info about violations which were charged to driver (1 record per violation; at least 1 per IT-MV)
+violatn_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/violatn.sas7bdat")
+summary(violatn_data2010)
+View(violatn_data2010)
+
+#(19): Vision Data-- contains info about circumstances that may have obscured driver vision (1 record per obstruction; at least 1 record per IT-MV)
+vision_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/vision.sas7bdat")
+summary(vision_data2010)
+View(vision_data2010)
+
+#(20): Vsoe Data-- contains sequence of events for each IT-MV (simplified Vevent data file; 1 record per event)
+vsoe_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/vsoe.sas7bdat")
+summary(vsoe_data2010)
+View(vsoe_data2010)
+
+#(21): ACC_AUX Data-- includes variables that describe (involvement, crash type, injury type, # of fatalities, crash location, young driver, old driver, drowsy, distracted, crash time & place, etc. )
+acc_aux_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/acc_aux.sas7bdat")
+summary(acc_aux_data2010)
+View(acc_aux_data2010)
+
+#(22): Miacc Data-- Alcohol Multiple Imputation Crash Data
+#miacc_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/miacc.sas7bdat")
+#summary(miacc_data2010)
+#View(miacc_data2010)
+
+#(23): Midrvacc Data-- ???? CANNOT FIND DESCRIPTION
+#midrvacc_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/midrvacc.sas7bdat")
+#summary(midrvacc_data2010)
+#View(midrvacc_data2010)
+
+#(24): Miper Data-- Alcohol Multiple Imputation Person Data
+#miper_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/miper.sas7bdat")
+#summary(miper_data2010)
+#View(miper_data2010)
+
+#(25): Per_Aux Data-- AUXILIARY DATASET for PERSON
+per_aux_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/per_aux.sas7bdat")
+summary(per_aux_data2010)
+View(per_aux_data2010)
+
+#(26): Veh_Aux Data-- AUXILIARY DATASET for VEHICLE
+veh_aux_data2010 = read_sas("~/Desktop/DataScience/TrafficProj/2010_Files/Raw_Data/National/SAS_Files/FARS2010NationalSAS/veh_aux.sas7bdat")
+summary(veh_aux_data2010)
+iew(veh_aux_data2010)
+
+
+#**************************************************************************************************************************************************
+#******************************************************
+# LOADING 2011 FARS DATA 
+#******************************************************
+
+#(1): Accident Data-- crash characteristics (1 record per crash)
+accident_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/accident.sas7bdat")
+summary(accident_data2011)
+View(accident_data2011)
+
+#(2): Cevent Data-- chronological sequence of events (1 record per event)
+cevent_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/cevent.sas7bdat")
+summary(cevent_data2011)
+View(cevent_data2011)
+
+#(3): Damage Data-- vehicles damages (1 record per damaged area)
+#damage_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/damage.sas7bdat")
+#summary(damage_data2011)
+#View(damage_data2011)
+
+#(4): Distract Data-- driver distractions (1 record for each distraction; at least 1 per 'in-transit' motor vehicle (IT-MV))
+distract_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/distract.sas7bdat")
+summary(distract_data2011)
+View(distract_data2011)
+
+#(5): Drimpair Data-- physical impairments of driver of MV (1 record per impairment; at least 1 for each driver IT-MV)
+drimpair_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/drimpair.sas7bdat")
+summary(drimpair_data2011)
+View(drimpair_data2011)
+
+#(6): Factor Data-- vehicle circumstances that may have contributed to the accident (at least 1 record per IT-MV; sep record for each factor)
+factor_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/factor.sas7bdat")
+summary(factor_data2011)
+View(factor_data2011)
+
+#(7): Maneuver Data-- actions taken by the driver to avoid something or someone in the road (at least 1 record per IT-MV; sep record for each maneuver)
+maneuver_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/maneuver.sas7bdat")
+summary(maneuver_data2011)
+View(maneuver_data2011)
+
+#(8): Nmcrash Data-- improper actions of people NOT occupants of the MV (1 record per action; at least 1 per person not occupant of MV)
+nmcrash_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/nmcrash.sas7bdat")
+summary(nmcrash_data2011)
+View(nmcrash_data2011)
+
+#(9): NmImpair Data-- physical impairments of people NOT occupants of the MV (1 record per impairment; at least 1 per person not occupant of MV)
+nmimpair_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/nmimpair.sas7bdat")
+summary(nmimpair_data2011)
+View(nmimpair_data2011)
+
+#(10): NmPrior Data-- actions of people that are not occupants (1 record per action; at least 1 record per person not occupant of MV)
+nmprior_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/nmprior.sas7bdat")
+summary(nmprior_data2011)
+View(nmprior_data2011)
+
+#(11): Parkwork Data-- information about parked and working vehicles (1 record per vechile)
+parkwork_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/parkwork.sas7bdat")
+summary(parkwork_data2011)
+View(parkwork_data2011)
+
+#(12): PBType Data-- information about crashes between MV & pedestrians (1 record for each ped, bicyclist, etc.)
+#pbtype_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/pbtype.sas7bdat")
+#summary(pbtype_data2011)
+#View(pbtype_data2011)
+
+#(13): Person Data-- describes characteristics/facts/outcomes all persons involved in the crash (including motorist & non-motorists)
+person_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/person.sas7bdat")
+summary(person_data2011)
+View(person_data2011)
+
+#(14): SafetyEq Data-- information about safety equipment used by people who are not occupants of MV (1 record per equipment item)
+safetyeq_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/safetyeq.sas7bdat")
+summary(safetyeq_data2011)
+View(safetyeq_data2011)
+
+#(15): Vehicle Data-- information describing IT-MV & drivers of IT-MV
+vehicle_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/vehicle.sas7bdat")
+summary(vehicle_data2011)
+View(vehicle_data2011)
+
+#(16): VEvent Data-- contains the sequence of events for each in- transport motor vehicle involved in the crash. (same elements as cevent_data2015)
+vevent_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/vevent.sas7bdat")
+summary(vevent_data2011)
+View(vevent_data2011)
+
+#(17): VINDecode Data-- contains vehicle descriptors for all vehicles, based on vehicle's VIN (decoded using VINtelligence program)
+#vindecode_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/vindecode.sas7bdat")
+#summary(vindecode_data2011)
+#View(vindecode_data2011)
+
+#(18): Violatin Data-- contains info about violations which were charged to driver (1 record per violation; at least 1 per IT-MV)
+violatn_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/violatn.sas7bdat")
+summary(violatn_data2011)
+View(violatn_data2011)
+
+#(19): Vision Data-- contains info about circumstances that may have obscured driver vision (1 record per obstruction; at least 1 record per IT-MV)
+vision_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/vision.sas7bdat")
+summary(vision_data2011)
+View(vision_data2011)
+
+#(20): Vsoe Data-- contains sequence of events for each IT-MV (simplified Vevent data file; 1 record per event)
+vsoe_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/vsoe.sas7bdat")
+summary(vsoe_data2011)
+View(vsoe_data2011)
+
+#(21): ACC_AUX Data-- includes variables that describe (involvement, crash type, injury type, # of fatalities, crash location, young driver, old driver, drowsy, distracted, crash time & place, etc. )
+acc_aux_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/acc_aux.sas7bdat")
+summary(acc_aux_data2011)
+View(acc_aux_data2011)
+
+#(22): Miacc Data-- Alcohol Multiple Imputation Crash Data
+#miacc_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/miacc.sas7bdat")
+#summary(miacc_data2011)
+#View(miacc_data2011)
+
+#(23): Midrvacc Data-- ???? CANNOT FIND DESCRIPTION
+#midrvacc_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/midrvacc.sas7bdat")
+#summary(midrvacc_data2011)
+#View(midrvacc_data2011)
+
+#(24): Miper Data-- Alcohol Multiple Imputation Person Data
+#miper_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/miper.sas7bdat")
+#summary(miper_data2011)
+#View(miper_data2011)
+
+#(25): Per_Aux Data-- AUXILIARY DATASET for PERSON
+per_aux_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/per_aux.sas7bdat")
+summary(per_aux_data2011)
+View(per_aux_data2011)
+
+#(26): Veh_Aux Data-- AUXILIARY DATASET for VEHICLE
+veh_aux_data2011 = read_sas("~/Desktop/DataScience/TrafficProj/2011_Files/Raw_Data/National/SAS_Files/FARS2011NationalSAS/veh_aux.sas7bdat")
+summary(veh_aux_data2011)
+View(veh_aux_data2011)
+
+#**************************************************************************************************************************************************
+#******************************************************
+# LOADING 2012 FARS DATA 
+#******************************************************
+
+#(1): Accident Data-- crash characteristics (1 record per crash)
+accident_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/accident.sas7bdat")
+summary(accident_data2012)
+View(accident_data2012)
+
+#(2): Cevent Data-- chronological sequence of events (1 record per event)
+cevent_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/cevent.sas7bdat")
+summary(cevent_data2012)
+View(cevent_data2012)
+
+#(3): Damage Data-- vehicles damages (1 record per damaged area)
+damage_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/damage.sas7bdat")
+summary(damage_data2012)
+View(damage_data2012)
+
+#(4): Distract Data-- driver distractions (1 record for each distraction; at least 1 per 'in-transit' motor vehicle (IT-MV))
+distract_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/distract.sas7bdat")
+summary(distract_data2012)
+View(distract_data2012)
+
+#(5): Drimpair Data-- physical impairments of driver of MV (1 record per impairment; at least 1 for each driver IT-MV)
+drimpair_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/drimpair.sas7bdat")
+summary(drimpair_data2012)
+View(drimpair_data2012)
+
+#(6): Factor Data-- vehicle circumstances that may have contributed to the accident (at least 1 record per IT-MV; sep record for each factor)
+factor_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/factor.sas7bdat")
+summary(factor_data2012)
+View(factor_data2012)
+
+#(7): Maneuver Data-- actions taken by the driver to avoid something or someone in the road (at least 1 record per IT-MV; sep record for each maneuver)
+maneuver_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/maneuver.sas7bdat")
+summary(maneuver_data2012)
+View(maneuver_data2012)
+
+#(8): Nmcrash Data-- improper actions of people NOT occupants of the MV (1 record per action; at least 1 per person not occupant of MV)
+nmcrash_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/nmcrash.sas7bdat")
+summary(nmcrash_data2012)
+View(nmcrash_data2012)
+
+#(9): NmImpair Data-- physical impairments of people NOT occupants of the MV (1 record per impairment; at least 1 per person not occupant of MV)
+nmimpair_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/nmimpair.sas7bdat")
+summary(nmimpair_data2012)
+View(nmimpair_data2012)
+
+#(10): NmPrior Data-- actions of people that are not occupants (1 record per action; at least 1 record per person not occupant of MV)
+nmprior_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/nmprior.sas7bdat")
+summary(nmprior_data2012)
+View(nmprior_data2012)
+
+#(11): Parkwork Data-- information about parked and working vehicles (1 record per vechile)
+parkwork_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/parkwork.sas7bdat")
+summary(parkwork_data2012)
+View(parkwork_data2012)
+
+#(12): PBType Data-- information about crashes between MV & pedestrians (1 record for each ped, bicyclist, etc.)
+#pbtype_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/pbtype.sas7bdat")
+#summary(pbtype_data2012)
+#View(pbtype_data2012)
+
+#(13): Person Data-- describes characteristics/facts/outcomes all persons involved in the crash (including motorist & non-motorists)
+person_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/person.sas7bdat")
+summary(person_data2012)
+View(person_data2012)
+
+#(14): SafetyEq Data-- information about safety equipment used by people who are not occupants of MV (1 record per equipment item)
+safetyeq_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/safetyeq.sas7bdat")
+summary(safetyeq_data2012)
+View(safetyeq_data2012)
+
+#(15): Vehicle Data-- information describing IT-MV & drivers of IT-MV
+vehicle_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/vehicle.sas7bdat")
+summary(vehicle_data2012)
+View(vehicle_data2012)
+
+#(16): VEvent Data-- contains the sequence of events for each in- transport motor vehicle involved in the crash. (same elements as cevent_data2015)
+vevent_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/vevent.sas7bdat")
+summary(vevent_data2012)
+View(vevent_data2012)
+
+#(17): VINDecode Data-- contains vehicle descriptors for all vehicles, based on vehicle's VIN (decoded using VINtelligence program)
+#vindecode_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/vindecode.sas7bdat")
+summary(vindecode_data2012)
+View(vindecode_data2012)
+
+#(18): Violatin Data-- contains info about violations which were charged to driver (1 record per violation; at least 1 per IT-MV)
+violatn_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/violatn.sas7bdat")
+summary(violatn_data2012)
+View(violatn_data2012)
+
+#(19): Vision Data-- contains info about circumstances that may have obscured driver vision (1 record per obstruction; at least 1 record per IT-MV)
+vision_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/vision.sas7bdat")
+summary(vision_data2012)
+View(vision_data2012)
+
+#(20): Vsoe Data-- contains sequence of events for each IT-MV (simplified Vevent data file; 1 record per event)
+vsoe_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/vsoe.sas7bdat")
+summary(vsoe_data2012)
+View(vsoe_data2012)
+
+#(21): ACC_AUX Data-- includes variables that describe (involvement, crash type, injury type, # of fatalities, crash location, young driver, old driver, drowsy, distracted, crash time & place, etc. )
+#acc_aux_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/acc_aux.sas7bdat")
+summary(acc_aux_data2012)
+View(acc_aux_data2012)
+
+#(22): Miacc Data-- Alcohol Multiple Imputation Crash Data
+miacc_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/miacc.sas7bdat")
+summary(miacc_data2012)
+View(miacc_data2012)
+
+#(23): Midrvacc Data-- ???? CANNOT FIND DESCRIPTION
+midrvacc_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/midrvacc.sas7bdat")
+summary(midrvacc_data2012)
+View(midrvacc_data2012)
+
+#(24): Miper Data-- Alcohol Multiple Imputation Person Data
+miper_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/miper.sas7bdat")
+summary(miper_data2012)
+View(miper_data2012)
+
+#(25): Per_Aux Data-- AUXILIARY DATASET for PERSON
+#per_aux_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/per_aux.sas7bdat")
+summary(per_aux_data2012)
+View(per_aux_data2012)
+
+#(26): Veh_Aux Data-- AUXILIARY DATASET for VEHICLE
+#veh_aux_data2012 = read_sas("~/Desktop/DataScience/TrafficProj/2012_Files/Raw_Data/National/SAS_Files/FARS2012NationalSAS/veh_aux.sas7bdat")
+summary(veh_aux_data2012)
+View(veh_aux_data2012)
+
+#**************************************************************************************************************************************************
+#******************************************************
+# LOADING 2013 FARS DATA 
+#******************************************************
+
+#(1): Accident Data-- crash characteristics (1 record per crash)
+accident_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/accident.sas7bdat")
+summary(accident_data2013)
+View(accident_data2013)
+
+#(2): Cevent Data-- chronological sequence of events (1 record per event)
+cevent_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/cevent.sas7bdat")
+summary(cevent_data2013)
+View(cevent_data2013)
+
+#(3): Damage Data-- vehicles damages (1 record per damaged area)
+damage_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/damage.sas7bdat")
+summary(damage_data2013)
+View(damage_data2013)
+
+#(4): Distract Data-- driver distractions (1 record for each distraction; at least 1 per 'in-transit' motor vehicle (IT-MV))
+distract_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/distract.sas7bdat")
+summary(distract_data2013)
+View(distract_data2013)
+
+#(5): Drimpair Data-- physical impairments of driver of MV (1 record per impairment; at least 1 for each driver IT-MV)
+drimpair_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/drimpair.sas7bdat")
+summary(drimpair_data2013)
+View(drimpair_data2013)
+
+#(6): Factor Data-- vehicle circumstances that may have contributed to the accident (at least 1 record per IT-MV; sep record for each factor)
+factor_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/factor.sas7bdat")
+summary(factor_data2013)
+View(factor_data2013)
+
+#(7): Maneuver Data-- actions taken by the driver to avoid something or someone in the road (at least 1 record per IT-MV; sep record for each maneuver)
+maneuver_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/maneuver.sas7bdat")
+summary(maneuver_data2013)
+View(maneuver_data2013)
+
+#(8): Nmcrash Data-- improper actions of people NOT occupants of the MV (1 record per action; at least 1 per person not occupant of MV)
+nmcrash_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/nmcrash.sas7bdat")
+summary(nmcrash_data2013)
+View(nmcrash_data2013)
+
+#(9): NmImpair Data-- physical impairments of people NOT occupants of the MV (1 record per impairment; at least 1 per person not occupant of MV)
+nmimpair_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/nmimpair.sas7bdat")
+summary(nmimpair_data2013)
+View(nmimpair_data2013)
+
+#(10): NmPrior Data-- actions of people that are not occupants (1 record per action; at least 1 record per person not occupant of MV)
+nmprior_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/nmprior.sas7bdat")
+summary(nmprior_data2013)
+View(nmprior_data2013)
+
+#(11): Parkwork Data-- information about parked and working vehicles (1 record per vechile)
+parkwork_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/parkwork.sas7bdat")
+summary(parkwork_data2013)
+View(parkwork_data2013)
+
+#(12): PBType Data-- information about crashes between MV & pedestrians (1 record for each ped, bicyclist, etc.)
+#pbtype_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/pbtype.sas7bdat")
+#summary(pbtype_data2013)
+#View(pbtype_data2013)
+
+#(13): Person Data-- describes characteristics/facts/outcomes all persons involved in the crash (including motorist & non-motorists)
+person_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/person.sas7bdat")
+summary(person_data2013)
+View(person_data2013)
+
+#(14): SafetyEq Data-- information about safety equipment used by people who are not occupants of MV (1 record per equipment item)
+safetyeq_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/safetyeq.sas7bdat")
+summary(safetyeq_data2013)
+View(safetyeq_data2013)
+
+#(15): Vehicle Data-- information describing IT-MV & drivers of IT-MV
+vehicle_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/vehicle.sas7bdat")
+summary(vehicle_data2013)
+View(vehicle_data2013)
+
+#(16): VEvent Data-- contains the sequence of events for each in- transport motor vehicle involved in the crash. (same elements as cevent_data2015)
+vevent_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/vevent.sas7bdat")
+summary(vevent_data2013)
+View(vevent_data2013)
+
+#(17): VINDecode Data-- contains vehicle descriptors for all vehicles, based on vehicle's VIN (decoded using VINtelligence program)
+vindecode_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/vindecode.sas7bdat")
+summary(vindecode_data2013)
+View(vindecode_data2013)
+
+#(18): Violatin Data-- contains info about violations which were charged to driver (1 record per violation; at least 1 per IT-MV)
+violatn_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/violatn.sas7bdat")
+summary(violatn_data2013)
+View(violatn_data2013)
+
+#(19): Vision Data-- contains info about circumstances that may have obscured driver vision (1 record per obstruction; at least 1 record per IT-MV)
+vision_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/vision.sas7bdat")
+summary(vision_data2013)
+View(vision_data2013)
+
+#(20): Vsoe Data-- contains sequence of events for each IT-MV (simplified Vevent data file; 1 record per event)
+vsoe_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/vsoe.sas7bdat")
+summary(vsoe_data2013)
+View(vsoe_data2013)
+
+#(21): ACC_AUX Data-- includes variables that describe (involvement, crash type, injury type, # of fatalities, crash location, young driver, old driver, drowsy, distracted, crash time & place, etc. )
+acc_aux_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/acc_aux.sas7bdat")
+summary(acc_aux_data2013)
+View(acc_aux_data2013)
+
+#(22): Miacc Data-- Alcohol Multiple Imputation Crash Data
+miacc_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/miacc.sas7bdat")
+summary(miacc_data2013)
+View(miacc_data2013)
+
+#(23): Midrvacc Data-- ???? CANNOT FIND DESCRIPTION
+midrvacc_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/midrvacc.sas7bdat")
+summary(midrvacc_data2013)
+View(midrvacc_data2013)
+
+#(24): Miper Data-- Alcohol Multiple Imputation Person Data
+miper_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/miper.sas7bdat")
+summary(miper_data2013)
+View(miper_data2013)
+
+#(25): Per_Aux Data-- AUXILIARY DATASET for PERSON
+per_aux_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/per_aux.sas7bdat")
+summary(per_aux_data2013)
+View(per_aux_data2013)
+
+#(26): Veh_Aux Data-- AUXILIARY DATASET for VEHICLE
+veh_aux_data2013 = read_sas("~/Desktop/DataScience/TrafficProj/2013_Files/Raw_Data/National/SAS_Files/FARS2013NationalSAS/veh_aux.sas7bdat")
+summary(veh_aux_data2013)
+View(veh_aux_data2013)
+
+#**************************************************************************************************************************************************
+#******************************************************
+# LOADING 2014 FARS DATA 
+#******************************************************
+
+#(1): Accident Data-- crash characteristics (1 record per crash)
+accident_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/accident.sas7bdat")
+summary(accident_data2014)
+View(accident_data2014)
+
+#(2): Cevent Data-- chronological sequence of events (1 record per event)
+cevent_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/cevent.sas7bdat")
+summary(cevent_data2014)
+View(cevent_data2014)
+
+#(3): Damage Data-- vehicles damages (1 record per damaged area)
+damage_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/damage.sas7bdat")
+summary(damage_data2014)
+View(damage_data2014)
+
+#(4): Distract Data-- driver distractions (1 record for each distraction; at least 1 per 'in-transit' motor vehicle (IT-MV))
+distract_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/distract.sas7bdat")
+summary(distract_data2014)
+View(distract_data2014)
+
+#(5): Drimpair Data-- physical impairments of driver of MV (1 record per impairment; at least 1 for each driver IT-MV)
+drimpair_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/drimpair.sas7bdat")
+summary(drimpair_data2014)
+View(drimpair_data2014)
+
+#(6): Factor Data-- vehicle circumstances that may have contributed to the accident (at least 1 record per IT-MV; sep record for each factor)
+factor_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/factor.sas7bdat")
+summary(factor_data2014)
+View(factor_data2014)
+
+#(7): Maneuver Data-- actions taken by the driver to avoid something or someone in the road (at least 1 record per IT-MV; sep record for each maneuver)
+maneuver_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/maneuver.sas7bdat")
+summary(maneuver_data2014)
+View(maneuver_data2014)
+
+#(8): Nmcrash Data-- improper actions of people NOT occupants of the MV (1 record per action; at least 1 per person not occupant of MV)
+nmcrash_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/nmcrash.sas7bdat")
+summary(nmcrash_data2014)
+View(nmcrash_data2014)
+
+#(9): NmImpair Data-- physical impairments of people NOT occupants of the MV (1 record per impairment; at least 1 per person not occupant of MV)
+nmimpair_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/nmimpair.sas7bdat")
+summary(nmimpair_data2014)
+View(nmimpair_data2014)
+
+#(10): NmPrior Data-- actions of people that are not occupants (1 record per action; at least 1 record per person not occupant of MV)
+nmprior_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/nmprior.sas7bdat")
+summary(nmprior_data2014)
+View(nmprior_data2014)
+
+#(11): Parkwork Data-- information about parked and working vehicles (1 record per vechile)
+parkwork_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/parkwork.sas7bdat")
+summary(parkwork_data2014)
+View(parkwork_data2014)
+
+#(12): PBType Data-- information about crashes between MV & pedestrians (1 record for each ped, bicyclist, etc.)
+pbtype_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/pbtype.sas7bdat")
+summary(pbtype_data2014)
+View(pbtype_data2014)
+
+#(13): Person Data-- describes characteristics/facts/outcomes all persons involved in the crash (including motorist & non-motorists)
+person_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/person.sas7bdat")
+summary(person_data2014)
+View(person_data2014)
+
+#(14): SafetyEq Data-- information about safety equipment used by people who are not occupants of MV (1 record per equipment item)
+safetyeq_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/safetyeq.sas7bdat")
+summary(safetyeq_data2014)
+View(safetyeq_data2014)
+
+#(15): Vehicle Data-- information describing IT-MV & drivers of IT-MV
+vehicle_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/vehicle.sas7bdat")
+summary(vehicle_data2014)
+View(vehicle_data2014)
+
+#(16): VEvent Data-- contains the sequence of events for each in- transport motor vehicle involved in the crash. (same elements as cevent_data2015)
+vevent_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/vevent.sas7bdat")
+summary(vevent_data2014)
+View(vevent_data2014)
+
+#(17): VINDecode Data-- contains vehicle descriptors for all vehicles, based on vehicle's VIN (decoded using VINtelligence program)
+vindecode_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/vindecode.sas7bdat")
+summary(vindecode_data2014)
+View(vindecode_data2014)
+
+#(18): Violatin Data-- contains info about violations which were charged to driver (1 record per violation; at least 1 per IT-MV)
+violatn_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/violatn.sas7bdat")
+summary(violatn_data2014)
+View(violatn_data2014)
+
+#(19): Vision Data-- contains info about circumstances that may have obscured driver vision (1 record per obstruction; at least 1 record per IT-MV)
+vision_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/vision.sas7bdat")
+summary(vision_data2014)
+View(vision_data2014)
+
+#(20): Vsoe Data-- contains sequence of events for each IT-MV (simplified Vevent data file; 1 record per event)
+vsoe_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/vsoe.sas7bdat")
+summary(vsoe_data2014)
+View(vsoe_data2014)
+
+#(21): ACC_AUX Data-- includes variables that describe (involvement, crash type, injury type, # of fatalities, crash location, young driver, old driver, drowsy, distracted, crash time & place, etc. )
+acc_aux_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/acc_aux.sas7bdat")
+summary(acc_aux_data2014)
+View(acc_aux_data2014)
+
+#(22): Miacc Data-- Alcohol Multiple Imputation Crash Data
+miacc_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/miacc.sas7bdat")
+summary(miacc_data2014)
+View(miacc_data2014)
+
+#(23): Midrvacc Data-- ???? CANNOT FIND DESCRIPTION
+midrvacc_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/midrvacc.sas7bdat")
+summary(midrvacc_data2014)
+View(midrvacc_data2014)
+
+#(24): Miper Data-- Alcohol Multiple Imputation Person Data
+miper_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/miper.sas7bdat")
+summary(miper_data2014)
+View(miper_data2014)
+
+#(25): Per_Aux Data-- AUXILIARY DATASET for PERSON
+per_aux_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/per_aux.sas7bdat")
+summary(per_aux_data2014)
+View(per_aux_data2014)
+
+#(26): Veh_Aux Data-- AUXILIARY DATASET for VEHICLE
+veh_aux_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/veh_aux.sas7bdat")
+summary(veh_aux_data2014)
+View(veh_aux_data2014)
+
+#(27): 
+formats_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/formats.sas7bdat")
+summary(formats_data2014)
+View(formats_data2014)
+
+#**************************************************************************************************************************************************
+#******************************************************
+# LOADING 2015 FARS DATA 
+#******************************************************
+
+#(1): Accident Data-- crash characteristics (1 record per crash)
+accident_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/accident.sas7bdat")
+summary(accident_data2015)
+View(accident_data2015)
+
+#(2): Cevent Data-- chronological sequence of events (1 record per event)
+cevent_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/cevent.sas7bdat")
+summary(cevent_data2015)
+View(cevent_data2015)
+
+#(3): Damage Data-- vehicles damages (1 record per damaged area)
+damage_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/damage.sas7bdat")
+summary(damage_data2015)
+View(damage_data2015)
+
+#(4): Distract Data-- driver distractions (1 record for each distraction; at least 1 per 'in-transit' motor vehicle (IT-MV))
+distract_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/distract.sas7bdat")
+summary(distract_data2015)
+View(distract_data2015)
+
+#(5): Drimpair Data-- physical impairments of driver of MV (1 record per impairment; at least 1 for each driver IT-MV)
+drimpair_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/drimpair.sas7bdat")
+summary(drimpair_data2015)
+View(drimpair_data2015)
+
+#(6): Factor Data-- vehicle circumstances that may have contributed to the accident (at least 1 record per IT-MV; sep record for each factor)
+factor_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/factor.sas7bdat")
+summary(factor_data2015)
+View(factor_data2015)
+
+#(7): Maneuver Data-- actions taken by the driver to avoid something or someone in the road (at least 1 record per IT-MV; sep record for each maneuver)
+maneuver_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/maneuver.sas7bdat")
+summary(maneuver_data2015)
+View(maneuver_data2015)
+
+#(8): Nmcrash Data-- improper actions of people NOT occupants of the MV (1 record per action; at least 1 per person not occupant of MV)
+nmcrash_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/nmcrash.sas7bdat")
+summary(nmcrash_data2015)
+View(nmcrash_data2015)
+
+#(9): NmImpair Data-- physical impairments of people NOT occupants of the MV (1 record per impairment; at least 1 per person not occupant of MV)
+nmimpair_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/nmimpair.sas7bdat")
+summary(nmimpair_data2015)
+View(nmimpair_data2015)
+
+#(10): NmPrior Data-- actions of people that are not occupants (1 record per action; at least 1 record per person not occupant of MV)
+nmprior_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/nmprior.sas7bdat")
+summary(nmprior_data2015)
+View(nmprior_data2015)
+
+#(11): Parkwork Data-- information about parked and working vehicles (1 record per vechile)
+parkwork_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/parkwork.sas7bdat")
+summary(parkwork_data2015)
+View(parkwork_data2015)
+
+#(12): PBType Data-- information about crashes between MV & pedestrians (1 record for each ped, bicyclist, etc.)
+pbtype_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/pbtype.sas7bdat")
+summary(pbtype_data2015)
+View(pbtype_data2015)
+
+#(13): Person Data-- describes characteristics/facts/outcomes all persons involved in the crash (including motorist & non-motorists)
+person_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/person.sas7bdat")
+summary(person_data2015)
+View(person_data2015)
+
+#(14): SafetyEq Data-- information about safety equipment used by people who are not occupants of MV (1 record per equipment item)
+safetyeq_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/safetyeq.sas7bdat")
+summary(safetyeq_data2015)
+View(safetyeq_data2015)
+
+#(15): Vehicle Data-- information describing IT-MV & drivers of IT-MV
+vehicle_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/vehicle.sas7bdat")
+summary(vehicle_data2015)
+View(vehicle_data2015)
+
+#(16): VEvent Data-- contains the sequence of events for each in- transport motor vehicle involved in the crash. (same elements as cevent_data2015)
+vevent_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/vevent.sas7bdat")
+summary(vevent_data2015)
+View(vevent_data2015)
+
+#(17): VINDecode Data-- contains vehicle descriptors for all vehicles, based on vehicle's VIN (decoded using VINtelligence program)
+vindecode_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/vindecode.sas7bdat")
+summary(vindecode_data2015)
+View(vindecode_data2015)
+
+#(18): Violatin Data-- contains info about violations which were charged to driver (1 record per violation; at least 1 per IT-MV)
+violatn_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/violatn.sas7bdat")
+summary(violatn_data2015)
+View(violatn_data2015)
+
+#(19): Vision Data-- contains info about circumstances that may have obscured driver vision (1 record per obstruction; at least 1 record per IT-MV)
+vision_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/vision.sas7bdat")
+summary(vision_data2015)
+View(vision_data2015)
+
+#(20): Vsoe Data-- contains sequence of events for each IT-MV (simplified Vevent data file; 1 record per event)
+vsoe_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/vsoe.sas7bdat")
+summary(vsoe_data2015)
+View(vsoe_data2015)
+
+#(21): ACC_AUX Data-- includes variables that describe (involvement, crash type, injury type, # of fatalities, crash location, young driver, old driver, drowsy, distracted, crash time & place, etc. )
+acc_aux_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/acc_aux.sas7bdat")
+summary(acc_aux_data2015)
+View(acc_aux_data2015)
+
+#(22): Miacc Data-- Alcohol Multiple Imputation Crash Data
+miacc_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/miacc.sas7bdat")
+summary(miacc_data2015)
+View(miacc_data2015)
+
+#(23): Midrvacc Data-- ???? CANNOT FIND DESCRIPTION
+midrvacc_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/midrvacc.sas7bdat")
+summary(midrvacc_data2015)
+View(midrvacc_data2015)
+
+#(24): Miper Data-- Alcohol Multiple Imputation Person Data
+miper_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/miper.sas7bdat")
+summary(miper_data2015)
+View(miper_data2015)
+
+#(25): Per_Aux Data-- AUXILIARY DATASET for PERSON
+per_aux_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/per_aux.sas7bdat")
+summary(per_aux_data2015)
+View(per_aux_data2015)
+
+#(26): Veh_Aux Data-- AUXILIARY DATASET for VEHICLE
+veh_aux_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/veh_aux.sas7bdat")
+summary(veh_aux_data2015)
+View(veh_aux_data2015)
