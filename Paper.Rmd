@@ -1,9 +1,8 @@
----
 title: "Traffic Fatalities Project"
 author: "Sarah Salter"
 date: "September 16, 2016"
 output: html_document
----
+
 
 #I.  Introduction
 
