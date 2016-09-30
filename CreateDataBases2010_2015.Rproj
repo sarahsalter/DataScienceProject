@@ -1,1 +1,596 @@
+#********************************************************************************************************************************* 
+#****************************************************  DATA SCIENCE PROJECT   ****************************************************
+#********************************************************************************************************************************* 
+# DATE CREATED: 9/28/2016
+# PURPOSE: To create databases for each of the data files so that all the data does not need to be directly uploaded into R. 
+
+
+#**************************************************************************************************************************************************
+#******************************************************
+# ORGANIZE 2014 NATIONAL FARS DATA 
+#******************************************************
+accident_data2014
+cevent_data2014
+damage_data2014
+distract_data2014
+drimpair_data2014
+factor_data2014
+maneuver_data2014
+nmcrash_data2014
+nmimpair_data2014
+nmprior_data2014
+parkwork_data2014
+pbtype_data2014
+person_data2014
+safetyeq_data2014
+vehicle_data2014
+vevent_data2014
+vindecode_data2014
+violatn_data2014
+vision_data2014
+vsoe_data2014
+acc_aux_data2014
+per_aux_data2014
+veh_aux_data2014
+miacc_data2014
+midrvacc_data2014
+miper_data2014
+
+
+#******************************************************
+# CREATING DATABASES FOR 2014 NATIONAL FARS DATA 
+#******************************************************
+#(1): Create DB for accident_data2014
+accident_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/accident.sas7bdat")
+db_accident_2014 <- src_sqlite("db_accident_2014.sqlite3", 
+                               create = T)
+accident_2014_sqlite <- copy_to(db_accident_2014, 
+                                accident_data2014, temporary = FALSE)
+src_tbls(db_accident_2014)
+tbl(db_accident_2014, "accident_data2014")
+
+
+#(2): Create DB for cevent_data2014
+cevent_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/cevent.sas7bdat")
+db_cevent_2014 <- src_sqlite("db_cevent_2014.sqlite3", 
+                             create = T)
+cevent_2014_sqlite <- copy_to(db_cevent_2014, 
+                              cevent_data2014, temporary = FALSE)
+src_tbls(db_cevent_2014)
+tbl(db_cevent_2014, "cevent_data2014")
+
+
+#(3): Create DB for damage_data2014
+damage_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/damage.sas7bdat")
+db_damage_2014 <- src_sqlite("db_damage_2014.sqlite3", 
+                             create = T)
+damage_2014_sqlite <- copy_to(db_damage_2014, 
+                              damage_data2014, temporary = FALSE)
+src_tbls(db_damage_2014)
+tbl(db_damage_2014, "damage_data2014")
+
+
+#(4): Create DB for distract_data2014
+distract_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/distract.sas7bdat")
+db_distract_2014 <- src_sqlite("db_distract_2014.sqlite3", 
+                               create = T)
+distract_2014_sqlite <- copy_to(db_distract_2014, 
+                                distract_data2014, temporary = FALSE)
+src_tbls(db_distract_2014)
+tbl(db_distract_2014, "distract_data2014")
+
+
+#(5): Create DB for drimpair_data2014
+drimpair_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/drimpair.sas7bdat")
+db_drimpair_2014 <- src_sqlite("db_drimpair_2014.sqlite3", 
+                               create = T)
+drimpair_2014_sqlite <- copy_to(db_drimpair_2014, 
+                                drimpair_data2014, temporary = FALSE)
+src_tbls(db_drimpair_2014)
+tbl(db_drimpair_2014, "drimpair_data2014")
+
+
+#(6): Create DB for factor_data2014
+factor_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/factor.sas7bdat")
+db_factor_2014 <- src_sqlite("db_factor_2014.sqlite3", 
+                             create = T)
+factor_2014_sqlite <- copy_to(db_factor_2014, 
+                              factor_data2014 , temporary = FALSE)
+src_tbls(db_factor_2014)
+tbl(db_factor_2014, "factor_data2014")
+
+
+#(7): Create DB for maneuver_data2014
+db_maneuver_2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/maneuver.sas7bdat")
+db_maneuver_2014 <- src_sqlite("db_maneuver_2014.sqlite3", 
+                               create = T)
+maneuver_2014_sqlite <- copy_to(db_maneuver_2014, 
+                                db_maneuver_2014 , temporary = FALSE)
+src_tbls(db_maneuver_2014)
+tbl(db_maneuver_2014, "db_maneuver_2014")
+
+
+#(8): Create DB for nmcrash_data2014
+nmcrash_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/nmcrash.sas7bdat")
+db_nmcrash_2014 <- src_sqlite("db_nmcrash_2014.sqlite3", 
+                              create = T)
+nmcrash_2014_sqlite <- copy_to(db_nmcrash_2014, 
+                               nmcrash_data2014 , temporary = FALSE)
+src_tbls(db_nmcrash_2014)
+tbl(db_nmcrash_2014, "nmcrash_data2014")
+
+
+#(9): Create DB for nmimpair_data2014
+nmimpair_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/nmimpair.sas7bdat")
+db_nmimpair_2014 <- src_sqlite("db_nmimpair_2014.sqlite3", 
+                               create = T)
+nmimpair_2014_sqlite <- copy_to(db_nmimpair_2014, 
+                                nmimpair_data2014  , temporary = FALSE)
+src_tbls(db_nmimpair_2014)
+
+tbl(db_nmimpair_2014, "nmimpair_data2014")
+
+
+#(10): Create DB for nmprior_data2014
+nmprior_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/nmprior.sas7bdat")
+db_nmprior_2014 <- src_sqlite("db_nmprior_2014.sqlite3", 
+                              create = T)
+nmprior_2014_sqlite <- copy_to(db_nmprior_2014, 
+                               nmprior_data2014  , temporary = FALSE)
+src_tbls(db_nmprior_2014)
+tbl(db_nmprior_2014, "nmprior_data2014")
+
+
+#(11): Create DB for parkwork_data2014
+parkwork_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/parkwork.sas7bdat")
+db_parkwork_2014 <- src_sqlite("db_parkwork_2014.sqlite3", 
+                               create = T)
+parkwork_2014_sqlite <- copy_to(db_parkwork_2014, 
+                                parkwork_data2014  , temporary = FALSE)
+src_tbls(db_parkwork_2014)
+tbl(db_parkwork_2014, "parkwork_data2014")
+
+
+#(12): Create DB for pbtype_data2014
+pbtype_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/pbtype.sas7bdat")
+db_pbtype_2014 <- src_sqlite("db_pbtype_2014.sqlite3", 
+                             create = T)
+pbtype_2014_sqlite <- copy_to(db_pbtype_2014, 
+                              pbtype_data2014  , temporary = FALSE)
+src_tbls(db_pbtype_2014)
+tbl(db_pbtype_2014, "pbtype_data2014")
+
+
+#(13): Create DB for person_data2014
+person_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/person.sas7bdat")
+db_person_2014 <- src_sqlite("db_person_2014.sqlite3", 
+                             create = T)
+person_2014_sqlite <- copy_to(db_person_2014, 
+                              person_data2014  , temporary = FALSE)
+src_tbls(db_person_2014)
+tbl(db_person_2014, "person_data2014")
+
+
+#(14): Create DB for safetyeq_data2014
+safetyeq_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/safetyeq.sas7bdat")
+db_safetyeq_2014 <- src_sqlite("db_safetyeq_2014.sqlite3", 
+                               create = T)
+safetyeq_2014_sqlite <- copy_to(db_safetyeq_2014, 
+                                safetyeq_data2014  , temporary = FALSE)
+src_tbls(db_safetyeq_2014)
+tbl(db_safetyeq_2014, "safetyeq_data2014")
+
+
+#(15): Create DB for vehicle_data2014
+vehicle_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/vehicle.sas7bdat")
+db_vehicle_2014 <- src_sqlite("db_vehicle_2014.sqlite3", 
+                              create = T)
+vehicle_2014_sqlite <- copy_to(db_vehicle_2014, 
+                               vehicle_data2014, temporary = FALSE)
+src_tbls(db_vehicle_2014)
+tbl(db_vehicle_2014, "vehicle_data2014")
+
+
+#(16): Create DB for vevent_data2014
+vevent_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/vevent.sas7bdat")
+db_vevent_2014 <- src_sqlite("db_vevent_2014.sqlite3", 
+                             create = T)
+vevent_2015_sqlite <- copy_to(db_vevent_2014, 
+                              vevent_data2014  , temporary = FALSE)
+src_tbls(db_vevent_2014)
+tbl(db_vevent_2014, "vevent_data2014")
+
+
+#(17): Create DB for vindecode_data2014
+vindecode_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/vindecode.sas7bdat")
+db_vindecode_2014 <- src_sqlite("db_vindecode_2014.sqlite3", 
+                                create = T)
+vindecode_2015_sqlite <- copy_to(db_vindecode_2014, 
+                                 vindecode_data2014  , temporary = FALSE)
+src_tbls(db_vindecode_2014)
+tbl(db_vindecode_2014, "vindecode_data2014")
+
+
+#(18): Create DB for violatn_data2014
+violatn_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/violatn.sas7bdat")
+db_violatn_2014 <- src_sqlite("db_violatn_2014.sqlite3", 
+                              create = T)
+violatn_2014_sqlite <- copy_to(db_violatn_2014, 
+                               violatn_data2014  , temporary = FALSE)
+src_tbls(db_violatn_2014)
+tbl(db_violatn_2014, "violatn_data2014")
+
+
+#(19): Create DB for vision_data2014
+vision_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/vision.sas7bdat")
+db_vision_2014 <- src_sqlite("db_vision_2014.sqlite3", 
+                             create = T)
+vision_2014_sqlite <- copy_to(db_vision_2014, 
+                              vision_data2014  , temporary = FALSE)
+src_tbls(db_vision_2014)
+tbl(db_vision_2014, "vision_data2014")
+
+
+#(20): Create DB for vsoe_data2014
+vsoe_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/vsoe.sas7bdat")
+db_vsoe_2014 <- src_sqlite("db_vsoe_2014.sqlite3", 
+                           create = T)
+vsoe_2014_sqlite <- copy_to(db_vsoe_2014, 
+                            vsoe_data2014  , temporary = FALSE)
+src_tbls(db_vsoe_2014)
+tbl(db_vsoe_2014, "vsoe_data2014")
+
+
+#(21): Create DB for acc_aux_data2014
+acc_aux_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/acc_aux.sas7bdat")
+db_acc_aux_2014 <- src_sqlite("db_acc_aux_2014.sqlite3", 
+                              create = T)
+acc_aux_2014_sqlite <- copy_to(db_acc_aux_2014 , 
+                               acc_aux_data2014   , temporary = FALSE)
+src_tbls(db_acc_aux_2014 )
+tbl(db_acc_aux_2014 , "acc_aux_data2014")
+
+
+#(22): Create DB for per_aux_data2014
+per_aux_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/per_aux.sas7bdat")
+db_per_aux_2014 <- src_sqlite("db_per_aux_2014", 
+                              create = T)
+per_aux_2014_sqlite <- copy_to(db_per_aux_2014, 
+                               per_aux_data2014  , temporary = FALSE)
+src_tbls(db_per_aux_2014)
+tbl(db_per_aux_2014, "per_aux_data2014")
+
+
+#(23): Create DB for veh_aux_data2014
+veh_aux_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/veh_aux.sas7bdat")
+db_veh_aux_2014 <- src_sqlite("db_veh_aux_2014.sqlite3", 
+                              create = T)
+veh_aux_2014_sqlite <- copy_to(db_veh_aux_2014, 
+                               veh_aux_data2014  , temporary = FALSE)
+src_tbls(db_veh_aux_2014)
+tbl(db_veh_aux_2014, "veh_aux_data2014")
+
+
+#(24): Create DB for miacc_data2014
+miacc_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/miacc.sas7bdat")
+db_miacc_2014 <- src_sqlite("db_miacc_2014.sqlite3", 
+                            create = T)
+miacc_2014_sqlite <- copy_to(db_miacc_2014, 
+                             miacc_data2014  , temporary = FALSE)
+src_tbls(db_miacc_2014)
+tbl(db_miacc_2014, "miacc_data2014")
+
+
+#(25): Create DB for midrvacc_data2014
+midrvacc_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/midrvacc.sas7bdat")
+db_midrvacc_2014 <- src_sqlite("db_midrvacc_2014.sqlite3", 
+                               create = T)
+midrvacc_2014_sqlite <- copy_to(db_midrvacc_2014, 
+                                midrvacc_data2014   , temporary = FALSE)
+src_tbls(db_midrvacc_2014)
+tbl(db_midrvacc_2014, "midrvacc_data2014")
+
+
+#(26): Create DB for miper_data2014
+miper_data2014 = read_sas("~/Desktop/DataScience/TrafficProj/2014_Files/Raw_Data/National/SAS_Files/FARS2014NationalSAS/miper.sas7bdat")
+db_miper_2014 <- src_sqlite("db_miper_2014.sqlite3", 
+                            create = T)
+miper_2014_sqlite <- copy_to(db_miper_2014, 
+                             miper_data2014  , temporary = FALSE)
+src_tbls(db_miper_2014)
+tbl(db_miper_2014, "miper_data2014")
+
+
+#**************************************************************************************************************************************************
+#******************************************************
+# ORGANIZE 2015 NATIONAL FARS DATA 
+#******************************************************
+accident_data2015
+cevent_data2015
+damage_data2015
+distract_data2015
+drimpair_data2015
+factor_data2015
+maneuver_data2015
+nmcrash_data2015
+nmimpair_data2015
+nmprior_data2015
+parkwork_data2015
+pbtype_data2015
+person_data2015
+safetyeq_data2015
+vehicle_data2015
+vevent_data2015
+vindecode_data2015
+violatn_data2015
+vision_data2015
+vsoe_data2015
+acc_aux_data2015
+per_aux_data2015
+veh_aux_data2015
+miacc_data2015
+midrvacc_data2015
+miper_data2015
+
+#******************************************************
+# CREATING DATABASES FOR 2015 NATIONAL FARS DATA 
+#******************************************************
+#(1): Create DB for accident_data2015
+accident_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/accident.sas7bdat")
+db_accident_2015 <- src_sqlite("db_accident_2015.sqlite3", 
+                               create = T)
+accident_2015_sqlite <- copy_to(db_accident_2015, 
+                                accident_data2015, temporary = FALSE)
+src_tbls(db_accident_2015)
+tbl(db_accident_2015, "accident_data2015")
+
+
+#(2): Create DB for cevent_data2015
+cevent_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/cevent.sas7bdat")
+db_cevent_2015 <- src_sqlite("db_cevent_2015.sqlite3", 
+                             create = T)
+cevent_2015_sqlite <- copy_to(db_cevent_2015, 
+                              cevent_data2015, temporary = FALSE)
+src_tbls(db_cevent_2015)
+tbl(db_cevent_2015, "cevent_data2015")
+
+
+#(3): Create DB for damage_data2015
+damage_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/damage.sas7bdat")
+db_damage_2015 <- src_sqlite("db_damage_2015.sqlite3", 
+                             create = T)
+damage_2015_sqlite <- copy_to(db_damage_2015, 
+                              damage_data2015, temporary = FALSE)
+src_tbls(db_damage_2015)
+tbl(db_damage_2015, "damage_data2015")
+
+
+#(4): Create DB for distract_data2015
+distract_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/distract.sas7bdat")
+db_distract_2015 <- src_sqlite("db_distract_2015.sqlite3", 
+                               create = T)
+distract_2015_sqlite <- copy_to(db_distract_2015, 
+                                distract_data2015, temporary = FALSE)
+src_tbls(db_distract_2015)
+tbl(db_distract_2015, "distract_data2015")
+
+
+#(5): Create DB for drimpair_data2015
+drimpair_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/drimpair.sas7bdat")
+db_drimpair_2015 <- src_sqlite("db_drimpair_2015.sqlite3", 
+                               create = T)
+drimpair_2015_sqlite <- copy_to(db_drimpair_2015, 
+                                drimpair_data2015, temporary = FALSE)
+src_tbls(db_drimpair_2015)
+tbl(db_drimpair_2015, "drimpair_data2015")
+
+
+#(6): Create DB for factor_data2015
+factor_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/factor.sas7bdat")
+db_factor_2015 <- src_sqlite("db_factor_2015.sqlite3", 
+                             create = T)
+factor_2015_sqlite <- copy_to(db_factor_2015, 
+                              factor_data2015 , temporary = FALSE)
+src_tbls(db_factor_2015)
+tbl(db_factor_2015, "factor_data2015")
+
+
+#(7): Create DB for maneuver_data2015
+maneuver_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/maneuver.sas7bdat")
+db_maneuver_2015 <- src_sqlite("db_maneuver_2015.sqlite3", 
+                               create = T)
+maneuver_2015_sqlite <- copy_to(db_maneuver_2015, 
+                                maneuver_data2015 , temporary = FALSE)
+src_tbls(db_maneuver_2015)
+tbl(db_maneuver_2015, "maneuver_data2015")
+
+
+#(8): Create DB for nmcrash_data2015
+nmcrash_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/nmcrash.sas7bdat")
+db_nmcrash_2015 <- src_sqlite("db_nmcrash_2015.sqlite3", 
+                              create = T)
+nmcrash_2015_sqlite <- copy_to(db_nmcrash_2015, 
+                               nmcrash_data2015 , temporary = FALSE)
+src_tbls(db_nmcrash_2015)
+tbl(db_nmcrash_2015, "nmcrash_data2015")
+
+
+#(9): Create DB for nmimpair_data2015
+nmimpair_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/nmimpair.sas7bdat")
+db_nmimpair_2015 <- src_sqlite("db_nmimpair_2015.sqlite3", 
+                               create = T)
+nmimpair_2015_sqlite <- copy_to(db_nmimpair_2015, 
+                                nmimpair_data2015  , temporary = FALSE)
+src_tbls(db_nmimpair_2015)
+tbl(db_nmimpair_2015, "nmimpair_data2015")
+
+
+#(10): Create DB for nmprior_data2015
+nmprior_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/nmprior.sas7bdat")
+db_nmprior_2015 <- src_sqlite("db_nmprior_2015.sqlite3", 
+                              create = T)
+nmprior_2015_sqlite <- copy_to(db_nmprior_2015, 
+                               nmprior_data2015  , temporary = FALSE)
+src_tbls(db_nmprior_2015)
+tbl(db_nmprior_2015, "nmprior_data2015")
+
+
+#(11): Create DB for parkwork_data2015
+parkwork_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/parkwork.sas7bdat")
+db_parkwork_2015 <- src_sqlite("db_parkwork_2015.sqlite3", 
+                               create = T)
+parkwork_2015_sqlite <- copy_to(db_parkwork_2015, 
+                                parkwork_data2015  , temporary = FALSE)
+src_tbls(db_parkwork_2015)
+tbl(db_parkwork_2015, "parkwork_data2015")
+
+
+#(12): Create DB for pbtype_data2015
+pbtype_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/pbtype.sas7bdat")
+db_pbtype_2015 <- src_sqlite("db_pbtype_2015.sqlite3", 
+                             create = T)
+pbtype_2015_sqlite <- copy_to(db_pbtype_2015, 
+                              pbtype_data2015  , temporary = FALSE)
+src_tbls(db_pbtype_2015)
+tbl(db_pbtype_2015, "pbtype_data2015")
+
+
+#(13): Create DB for person_data2015
+person_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/person.sas7bdat")
+db_person_2015 <- src_sqlite("db_person_2015.sqlite3", 
+                             create = T)
+person_2015_sqlite <- copy_to(db_person_2015, 
+                              person_data2015  , temporary = FALSE)
+src_tbls(db_person_2015)
+tbl(db_person_2015, "person_data2015")
+
+
+#(14): Create DB for safetyeq_data2015
+safetyeq_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/safetyeq.sas7bdat")
+db_safetyeq_2015 <- src_sqlite("db_safetyeq_2015.sqlite3", 
+                               create = T)
+safetyeq_2015_sqlite <- copy_to(db_safetyeq_2015, 
+                                safetyeq_data2015  , temporary = FALSE)
+src_tbls(db_safetyeq_2015)
+tbl(db_safetyeq_2015, "safetyeq_data2015")
+
+
+#(15): Create DB for vehicle_data2015
+vehicle_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/vehicle.sas7bdat")
+db_vehicle_2015 <- src_sqlite("db_vehicle_2015.sqlite3", 
+                              create = T)
+vehicle_2015_sqlite <- copy_to(db_vehicle_2015, 
+                               vehicle_data2015, temporary = FALSE)
+src_tbls(db_vehicle_2015)
+tbl(db_vehicle_2015, "vehicle_data2015")
+
+
+#(16): Create DB for vevent_data2015
+vevent_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/vevent.sas7bdat")
+db_vevent_2015 <- src_sqlite("db_vevent_2015.sqlite3", 
+                             create = T)
+vevent_2015_sqlite <- copy_to(db_vevent_2015, 
+                              vevent_data2015  , temporary = FALSE)
+src_tbls(db_vevent_2015)
+tbl(db_vevent_2015, "vevent_data2015")
+
+
+#(17): Create DB for vindecode_data2015
+vindecode_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/vindecode.sas7bdat")
+db_vindecode_2015 <- src_sqlite("db_vindecode_2015.sqlite3", 
+                                create = T)
+vindecode_2015_sqlite <- copy_to(db_vindecode_2015, 
+                                 vindecode_data2015  , temporary = FALSE)
+src_tbls(db_vindecode_2015)
+tbl(db_vindecode_2015, "vindecode_data2015")
+
+
+#(18): Create DB for violatn_data2015
+violatn_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/violatn.sas7bdat")
+db_violatn_2015 <- src_sqlite("db_violatn_2015.sqlite3", 
+                              create = T)
+violatn_2015_sqlite <- copy_to(db_violatn_2015, 
+                               violatn_data2015  , temporary = FALSE)
+src_tbls(db_violatn_2015)
+tbl(db_violatn_2015, "violatn_data2015")
+
+
+#(19): Create DB for vision_data2015
+vision_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/vision.sas7bdat")
+db_vision_2015 <- src_sqlite("db_vision_2015.sqlite3", 
+                             create = T)
+vision_2015_sqlite <- copy_to(db_vision_2015, 
+                              vision_data2015  , temporary = FALSE)
+src_tbls(db_vision_2015)
+tbl(db_vision_2015, "vision_data2015")
+
+
+#(20): Create DB for vsoe_data2015
+vsoe_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/vsoe.sas7bdat")
+db_vsoe_2015 <- src_sqlite("db_vsoe_2015.sqlite3", 
+                           create = T)
+vsoe_2015_sqlite <- copy_to(db_vsoe_2015, 
+                            vsoe_data2015  , temporary = FALSE)
+src_tbls(db_vsoe_2015)
+tbl(db_vsoe_2015, "vsoe_data2015")
+
+
+#(21): Create DB for acc_aux_data2015
+acc_aux_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/acc_aux.sas7bdat")
+db_acc_aux_2015 <- src_sqlite("db_acc_aux_2015 .sqlite3", 
+                              create = T)
+acc_aux_2015_sqlite <- copy_to(db_acc_aux_2015 , 
+                               acc_aux_data2015   , temporary = FALSE)
+src_tbls(db_acc_aux_2015 )
+tbl(db_acc_aux_2015 , "acc_aux_data2015")
+
+
+#(22): Create DB for per_aux_data2015
+per_aux_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/per_aux.sas7bdat")
+db_per_aux_2015 <- src_sqlite("db_per_aux_2015", 
+                              create = T)
+per_aux_2015_sqlite <- copy_to(db_per_aux_2015, 
+                               per_aux_data2015  , temporary = FALSE)
+src_tbls(db_per_aux_2015)
+tbl(db_per_aux_2015, "per_aux_data2015")
+
+
+#(23): Create DB for veh_aux_data2015
+veh_aux_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/veh_aux.sas7bdat")
+db_veh_aux_2015 <- src_sqlite("db_veh_aux_2015.sqlite3", 
+                              create = T)
+veh_aux_2015_sqlite <- copy_to(db_veh_aux_2015, 
+                               veh_aux_data2015  , temporary = FALSE)
+src_tbls(db_veh_aux_2015)
+tbl(db_veh_aux_2015, "veh_aux_data2015")
+
+
+#(24): Create DB for miacc_data2015
+miacc_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/miacc.sas7bdat")
+db_miacc_2015 <- src_sqlite("db_miacc_2015.sqlite3", 
+                            create = T)
+miacc_2015_sqlite <- copy_to(db_miacc_2015, 
+                             miacc_data2015  , temporary = FALSE)
+src_tbls(db_miacc_2015)
+tbl(db_miacc_2015, "miacc_data2015")
+
+
+#(25): Create DB for midrvacc_data2015
+midrvacc_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/midrvacc.sas7bdat")
+db_midrvacc_2015 <- src_sqlite("db_midrvacc_2015.sqlite3", 
+                               create = T)
+midrvacc_2015_sqlite <- copy_to(db_midrvacc_2015, 
+                                midrvacc_data2015   , temporary = FALSE)
+src_tbls(db_midrvacc_2015)
+tbl(db_midrvacc_2015, "midrvacc_data2015")
+
+
+#(26): Create DB for miper_data2015
+miper_data2015 = read_sas("~/Desktop/DataScience/TrafficProj/2015_Files/Raw_Data/National/SAS_Files/FARS2015NationalSAS/miper.sas7bdat")
+db_miper_2015 <- src_sqlite("db_nmprior_2015.sqlite3", 
+                            create = T)
+miper_2015_sqlite <- copy_to(db_miper_2015, 
+                             miper_data2015  , temporary = FALSE)
+src_tbls(db_miper_2015)
+tbl(db_miper_2015, "miper_data2015")
 
