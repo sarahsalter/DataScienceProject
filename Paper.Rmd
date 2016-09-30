@@ -12,9 +12,17 @@ output: html_document
 
 ##A.  Data
 ```
-FARS contains data on a census of fatal traffic crashes within the 50 States, the District of Columbia, and Puerto Rico. To be included in FARS, a crash must involve a motor vehicle traveling on a trafficway customarily open to the public and result in the death of a person (occupant of a vehicle or a non-occupant) within 30 days of the crash. FARS has been operational since 1975 and has collected information on over 989,451 motor vehicle fatalities and collects information on over 100 different coded data elements that characterizes the crash, the vehicle, and the people involved.
+FARS contains data on a census of fatal traffic crashes within the 50 States, the District of Columbia,
+and Puerto Rico. To be included in FARS, a crash must involve a motor vehicle traveling on a trafficway 
+customarily open to the public and result in the death of a person (occupant of a vehicle or a 
+non-occupant) within 30 days of the crash. FARS has been operational since 1975 and has collected 
+information on over 989,451 motor vehicle fatalities and collects information on over 100 different 
+coded data elements that characterizes the crash, the vehicle, and the people involved.
 
-FARS is vital to the mission of NHTSA to reduce the number of motor vehicle crashes and deaths on our nation's highways, and subsequently, reduce the associated economic loss to society resulting from those motor vehicle crashes and fatalities. FARS data is critical to understanding the characteristics of the environment, trafficway, vehicles, and persons involved in the crash.
+FARS is vital to the mission of NHTSA to reduce the number of motor vehicle crashes and deaths on our 
+nation's highways, and subsequently, reduce the associated economic loss to society resulting from 
+those motor vehicle crashes and fatalities. FARS data is critical to understanding the characteristics
+of the environment, trafficway, vehicles, and persons involved in the crash.
 
 Fatality Analysis Reporting System (FARS)
 
