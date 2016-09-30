@@ -14,11 +14,18 @@ output: html_document
   -  2.  Ad Campaigns Data
   -  3.  State Laws Data--  for traffic accident prevention (i.e- reprecussions for DUIs, violating provisional licenses
   -  4.  Street Light Data
-   
-+
-+
-+
-+
++ Identifying Feasible Research Questions Based on How Data is Merged & Subsetted 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
