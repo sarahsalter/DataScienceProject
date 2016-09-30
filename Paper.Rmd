@@ -25,13 +25,10 @@ non-occupant) within 30 days of the crash. FARS has been operational since 1975 
 information on over 989,451 motor vehicle fatalities and collects information on over 100 different 
 coded data elements that characterizes the crash, the vehicle, and the people involved.
 
-FARS is vital to the mission of NHTSA to reduce the number of motor vehicle crashes and deaths on our 
-nation's highways, and subsequently, reduce the associated economic loss to society resulting from 
-those motor vehicle crashes and fatalities. FARS data is critical to understanding the characteristics
-of the environment, trafficway, vehicles, and persons involved in the crash.
-
 
 Street Light Data 
+
+Advertising Educational Foundation Data 
 
 ```
 
@@ -45,6 +42,13 @@ Street Light Data
 
 
 #IV.  Discussion 
+
+FARS is vital to the mission of NHTSA to reduce the number of motor vehicle crashes and deaths on our 
+nation's highways, and subsequently, reduce the associated economic loss to society resulting from 
+those motor vehicle crashes and fatalities. FARS data is critical to understanding the characteristics
+of the environment, trafficway, vehicles, and persons involved in the crash.
+
+
 
 
 #V.  Limitations
